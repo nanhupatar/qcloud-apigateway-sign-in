@@ -1,0 +1,26 @@
+{
+  "name": "qcloud-apigateway-utils",
+  "version": "1.0.0",
+  "description": "qcloud-apigateway",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nanhupatar/qcloud-apigateway-utils.git"
+  },
+  "keywords": [
+    "qcloud-apigateway",
+    "腾讯云API网关\\"
+  ],
+  "author": "xiaohu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nanhupatar/qcloud-apigateway-utils/issues"
+  },
+  "homepage": "https://github.com/nanhupatar/qcloud-apigateway-utils#readme",
+  "dependencies": {
+    "crypto-js": "^3.1.9-1"
+  }
+}
