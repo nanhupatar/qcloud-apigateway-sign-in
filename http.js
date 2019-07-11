@@ -1,6 +1,6 @@
-import CryptoJS from 'crypto-js';
-import axios from 'anxios';
-import config from './env/config';
+const  CryptoJS = require("crypto-js");
+const axios = require('axios');
+const config = require('./env/config')
 
 // SCF环境的切换
 if (config.env === 'release') {
@@ -26,11 +26,23 @@ function getHeader() {
   }
 }
 
-const instance = axios.creat({
+const instance = axios.create({
   timeout: 5000,
   headers: getHeader(),
   withCredentials: true
 })
 
-export default instance;
+instance.interceptors.response.use(
+  response => {
+    if (response.status === 200) {
+      return Promise.resolve(response.data);
+    } else {
+      return Promise.reject(response);
+    }
+  },
+  error => {
+    return Promise.reject(error);
+  }
+)
 
+module.exports = instance;
