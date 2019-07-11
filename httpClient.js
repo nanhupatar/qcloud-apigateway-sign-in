@@ -26,4 +26,4 @@ function post(url, params) {
   })
 }
 
-export {get,post}
+module.exports = { get, post }
